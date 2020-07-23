@@ -41,9 +41,32 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-            Value = "\nID: " + this.Id + "\nName: " + this.Name + "\nEmployer: " + this.EmployerName + "\nLocation: " + this.EmployerLocation + "\nPosition Type: " + this.JobType + "\nCore Competency: " + this.JobCoreCompetency + "\n";
+           /* Value = ("\nID: " + this.Id + "\nName: " + this.Name + "\nEmployer: " + this.EmployerName + "\nLocation: " + this.EmployerLocation + "\nPosition Type: " + this.JobType + "\nCore Competency: " + this.JobCoreCompetency + "\n";*/
+/*           string value = $"\nID: {Id} \nName: {Name}\nEmployer: {EmployerName}\nLocation: {EmployerLocation}\n:Position Type{JobType}\n:Core Competency: {JobCoreCompetency}\n";
+*/
+            if (Name == ("") || Name == null)
+            {
+                Name = "Data not available";
+            }
+            if (EmployerName.Value == ("") || EmployerName.Value == null)
+            {
+                EmployerName.Value = "Data not available";
+            }
+            if (EmployerLocation.Value == ("") || EmployerLocation == null)
+            {
+                EmployerLocation.Value = "Data not available";
+            }
+            if (JobType.Value == ("") || JobType.Value == null)
+            {
+                JobType.Value = "Data not available";
+            }
+            if (JobCoreCompetency.Value == ("") || JobCoreCompetency.Value == null)
+            {
+                JobCoreCompetency.Value = "Data not available";
+            }
+            string value = $"\nID: {Id} \nName: {Name}\nEmployer: {EmployerName}\nLocation: {EmployerLocation}\n:Position Type{JobType}\n:Core Competency: {JobCoreCompetency}\n";
 
-            return Value;
+            return value;
         }
 
         public override bool Equals(object obj)

@@ -47,11 +47,12 @@ namespace TestJobsTest
      
       
         [TestMethod]
-        public void FirstLine()
+        public void ToStringTest()
         {
-            Job job1 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-
-            Assert.IsTrue(job1.ToString().StartsWith("\n"));
+            Job job1 = new Job("Product Tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            /*string expectedoutput = "\nID: " + job1.Id + "\nName: " + job1.Name + "\nEmployer: " + "Data not available" + "\nLocation: " + job1.EmployerLocation + "\nPosition Type: " + job1.JobType + "\nCore Competency: " + job1.JobCoreCompetency + "\n";*/
+            string expectedoutput = $"\nID: {job1.Id} \nName: {job1.Name}\nEmployer: {job1.EmployerName.Value}\nLocation: Data not available\n:Position Type{job1.JobType.Value}\n:Core Competency: {job1.JobCoreCompetency.Value}\n";
+            /*Assert.IsTrue(job1.ToString().StartsWith("\n"));
             Assert.IsTrue(job1.ToString().EndsWith("\n"));
 
             Assert.IsTrue(job1.ToString().Contains("ID: 1"));
@@ -59,7 +60,8 @@ namespace TestJobsTest
             Assert.IsTrue(job1.ToString().Contains("Employer: ACME"));
             Assert.IsTrue(job1.ToString().Contains("Location: Desert"));
             Assert.IsTrue(job1.ToString().Contains("Position Type: Quality control"));
-            Assert.IsTrue(job1.ToString().Contains("Core Competency: Persistence"));
+            Assert.IsTrue(job1.ToString().Contains("Core Competency: Persistence"));*/
+            Assert.AreEqual(expectedoutput, job1.ToString());
         }
 
 
